@@ -23,7 +23,6 @@ namespace GameSkeletonCSharp.Controller.actions
 
         public override void execute()
         {
-            // this.game.Dots.Add(new Model.Dot(x, y));
             this.game.Entities.Add(new Model.Dot(x, y));
         }
 

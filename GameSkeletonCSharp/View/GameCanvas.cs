@@ -43,7 +43,7 @@ namespace GameSkeletonCSharp.view
             this.game.ControllerThread.Start();
         }
 
-        public void makeController()
+        private void makeController()
         {
             ClickController cc = new ClickController(this.game);
 
@@ -54,9 +54,6 @@ namespace GameSkeletonCSharp.view
             }
         }
 
-
-
-
         public void update()
         {
             //Utilize UI Thread to update GUI
@@ -64,8 +61,6 @@ namespace GameSkeletonCSharp.view
             {
                 clearCanvas();
                 //Methods where we loop through our models to draw them
-                //drawDots();
-                //drawRectangles();
                 drawEntities();
             }));
         }
@@ -78,36 +73,7 @@ namespace GameSkeletonCSharp.view
             }
         }
 
-        private void drawDots()
-        {
-            foreach (Dot dot in this.game.Dots)
-            {
-                Ellipse ellipse = new Ellipse();
-                ellipse.Width = dot.Width;
-                ellipse.Height = dot.Height;
-                ellipse.Fill = new SolidColorBrush(Colors.Red);
-                Canvas.SetLeft(ellipse, dot.X - ellipse.Width / 2);
-                Canvas.SetTop(ellipse, dot.Y - ellipse.Height / 2);
-                this.Children.Add(ellipse);
-            }
-        }
-
-        private void drawRectangles()
-        {
-            foreach (Model.Rectangle rectangle in this.game.Rectangles)
-            {
-
-                System.Windows.Shapes.Rectangle rect = new System.Windows.Shapes.Rectangle();
-                rect.Width = rectangle.Width;
-                rect.Height = rectangle.Height;
-                rect.Fill = new SolidColorBrush(Colors.Blue);
-                Canvas.SetLeft(rect, rectangle.X - rect.Width / 2);
-                Canvas.SetTop(rect, rectangle.Y - rect.Height / 2);
-                this.Children.Add(rect);
-            }
-        }
-
-        public void clearCanvas()
+        private void clearCanvas()
         {
             this.Children.Clear();
         }
