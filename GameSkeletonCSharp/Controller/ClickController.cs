@@ -31,7 +31,6 @@ namespace GameSkeletonCSharp.Controller
             }
             if (e.ChangedButton == MouseButton.Left)
             {
-                Console.WriteLine("Adding left click action");
                 this.game.ActionsContainer.Enqueue(new LeftClickAction(this.game, e.GetPosition(this.game.Canvas)));
             }
         }
