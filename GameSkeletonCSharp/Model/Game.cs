@@ -23,9 +23,10 @@ namespace GameSkeletonCSharp.model
         public Boolean GameRunning { get; set; }
         public Boolean Running { get; set; }
         #endregion
-        #region
+        #region models
         public List<Dot> Dots { get; set; }
         public List<Rectangle> Rectangles { get; set; }
+        public List<Entity> Entities { get; set; }
         #endregion
         #region views
         public GameCanvas Canvas { get; set; }
@@ -74,6 +75,7 @@ namespace GameSkeletonCSharp.model
             //Game specific models
             this.Dots = new List<Dot>();
             this.Rectangles = new List<Rectangle>();
+            this.Entities = new List<Entity>();
         }
 
         /**

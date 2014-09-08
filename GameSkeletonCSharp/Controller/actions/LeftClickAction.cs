@@ -23,7 +23,8 @@ namespace GameSkeletonCSharp.Controller.actions
 
         public override void execute()
         {
-            this.game.Rectangles.Add(new Model.Rectangle(this.x, this.y));
+            //this.game.Rectangles.Add(new Model.Rectangle(this.x, this.y));
+            this.game.Entities.Add(new Model.Rectangle(this.x, this.y));
         }
 
     }

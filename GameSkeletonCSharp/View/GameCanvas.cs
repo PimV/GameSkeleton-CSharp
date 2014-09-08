@@ -64,12 +64,19 @@ namespace GameSkeletonCSharp.view
             {
                 clearCanvas();
                 //Methods where we loop through our models to draw them
-                drawDots();
-                drawRectangles();
+                //drawDots();
+                //drawRectangles();
+                drawEntities();
             }));
         }
 
-
+        private void drawEntities()
+        {
+            foreach (Entity entity in this.game.Entities)
+            {
+                this.Children.Add(entity.draw());
+            }
+        }
 
         private void drawDots()
         {

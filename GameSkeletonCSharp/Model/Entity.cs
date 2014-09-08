@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GameSkeletonCSharp.model
 {
-    public class Entity
+    public abstract  class Entity
     {
 
         //Position and Vector
@@ -100,5 +101,7 @@ namespace GameSkeletonCSharp.model
             this.X = 0;
             this.Y = 0;
         }
+
+        public abstract UIElement draw();
     }
 }
